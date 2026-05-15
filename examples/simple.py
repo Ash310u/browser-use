@@ -6,12 +6,12 @@ Setup:
 
 from dotenv import load_dotenv
 
-from browser_use import Agent, ChatBrowserUse
+from browser_use import Agent, ChatGoogle
 
 load_dotenv()
 
 agent = Agent(
-	task='Find the number of stars of the following repos: browser-use, playwright, stagehand, react, nextjs',
-	llm=ChatBrowserUse(model='bu-2-0'),
+	task='Find the number of total number of stars present in the pinned project github.com/ash310u',
+    llm=ChatGoogle(model='gemini-flash-latest'),
 )
 agent.run_sync()
